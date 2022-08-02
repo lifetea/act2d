@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Vec3, input, Input, EventKeyboard, KeyCode } from 'cc';
+import { _decorator, Component, Node, Animation, Vec3, input, Input, EventKeyboard, KeyCode } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('Player')
@@ -12,7 +12,10 @@ export class Player extends Component {
     accLeft:boolean = false
     accRight:boolean = false
 
+    anim:Animation = null
+
     onLoad() {
+        this.anim = this.node.getComponent(Animation)
         input.on(Input.EventType.KEY_DOWN, this.onKeyDown, this);
         input.on(Input.EventType.KEY_UP, this.onKeyUp, this);
     }
@@ -24,9 +27,11 @@ export class Player extends Component {
         switch (event.keyCode) {
             case KeyCode.KEY_A:
                 this.accLeft = true
+                this.anim.play('player-walker')
                 break;
             case KeyCode.KEY_D:
                 this.accRight = true
+                this.anim.play('player-walker')
                 break;
         }
     }
@@ -34,9 +39,11 @@ export class Player extends Component {
         switch (event.keyCode) {
             case KeyCode.KEY_A:
                 this.accLeft = false
+                this.anim.play('player-normal')
                 break;
             case KeyCode.KEY_D:
                 this.accRight = false
+                this.anim.play('player-normal')
                 break;
         }
     }
@@ -46,9 +53,11 @@ export class Player extends Component {
 
     update(deltaTime: number) {
         if (this.accLeft) {
+            this.node.scale.set(-2,2,2)
             this.playerPos.x -= this.speed * deltaTime
         }
         if(this.accRight){
+            this.node.scale.set(2,2,2)
             this.playerPos.x += this.speed * deltaTime
         }
         this.node.setPosition(this.playerPos.x, this.playerPos.y, this.playerPos.z)
