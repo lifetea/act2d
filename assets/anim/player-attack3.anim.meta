@@ -2,12 +2,12 @@
   "ver": "2.0.3",
   "importer": "animation-clip",
   "imported": true,
-  "uuid": "ade28865-b065-4b4e-aabc-a3d0f735bbef",
+  "uuid": "48344e48-5465-4c25-a12c-5ca00b8d82c7",
   "files": [
     ".cconb"
   ],
   "subMetas": {},
   "userData": {
-    "name": "player-walker"
+    "name": "player-attack3"
   }
 }

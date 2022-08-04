@@ -1,14 +1,14 @@
 [
   {
     "__type__": "cc.AnimationClip",
-    "_name": "player-attack",
+    "_name": "player-attack2",
     "_objFlags": 0,
     "_native": "",
     "sample": 12,
     "speed": 1,
-    "wrapMode": 22,
+    "wrapMode": 1,
     "enableTrsBlending": false,
-    "_duration": 0.4166666666666667,
+    "_duration": 0.5,
     "_hash": 500763545,
     "_tracks": [
       {
@@ -16,18 +16,7 @@
       }
     ],
     "_exoticAnimation": null,
-    "_events": [
-      {
-        "frame": 0.4166666666666667,
-        "func": "",
-        "params": []
-      },
-      {
-        "frame": 0.4166666666666667,
-        "func": "resetAnim",
-        "params": []
-      }
-    ]
+    "_events": []
   },
   {
     "__type__": "cc.animation.ObjectTrack",
@@ -67,27 +56,32 @@
       0.08333333333333333,
       0.16666666666666666,
       0.25,
-      0.3333333333333333
+      0.3333333333333333,
+      0.4166666666666667
     ],
     "_values": [
       {
-        "__uuid__": "5c1eb41c-b33d-4bf8-9221-4f7d74996079@5efdb",
+        "__uuid__": "5c1eb41c-b33d-4bf8-9221-4f7d74996079@6639c",
         "__expectedType__": "cc.SpriteFrame"
       },
       {
-        "__uuid__": "5c1eb41c-b33d-4bf8-9221-4f7d74996079@2797e",
+        "__uuid__": "5c1eb41c-b33d-4bf8-9221-4f7d74996079@337f1",
         "__expectedType__": "cc.SpriteFrame"
       },
       {
-        "__uuid__": "5c1eb41c-b33d-4bf8-9221-4f7d74996079@66fca",
+        "__uuid__": "5c1eb41c-b33d-4bf8-9221-4f7d74996079@6dbbf",
         "__expectedType__": "cc.SpriteFrame"
       },
       {
-        "__uuid__": "5c1eb41c-b33d-4bf8-9221-4f7d74996079@7592b",
+        "__uuid__": "5c1eb41c-b33d-4bf8-9221-4f7d74996079@a9296",
         "__expectedType__": "cc.SpriteFrame"
       },
       {
-        "__uuid__": "5c1eb41c-b33d-4bf8-9221-4f7d74996079@23847",
+        "__uuid__": "5c1eb41c-b33d-4bf8-9221-4f7d74996079@09a70",
+        "__expectedType__": "cc.SpriteFrame"
+      },
+      {
+        "__uuid__": "5c1eb41c-b33d-4bf8-9221-4f7d74996079@a7dc2",
         "__expectedType__": "cc.SpriteFrame"
       }
     ]

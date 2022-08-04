@@ -2,12 +2,12 @@
   "ver": "2.0.3",
   "importer": "animation-clip",
   "imported": true,
-  "uuid": "db0a833b-5043-4462-91da-21fcf0a54756",
+  "uuid": "ade28865-b065-4b4e-aabc-a3d0f735bbef",
   "files": [
     ".cconb"
   ],
   "subMetas": {},
   "userData": {
-    "name": "player-attack"
+    "name": "player-move"
   }
 }

@@ -4,5 +4,8 @@
   "version": "3.5.2",
   "creator": {
     "version": "3.5.2"
+  },
+  "devDependencies": {
+    "javascript-state-machine": "^3.1.0"
   }
 }
