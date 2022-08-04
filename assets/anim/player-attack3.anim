@@ -16,7 +16,20 @@
       }
     ],
     "_exoticAnimation": null,
-    "_events": []
+    "_events": [
+      {
+        "frame": 0.4166666666666667,
+        "func": "",
+        "params": []
+      },
+      {
+        "frame": 0.4166666666666667,
+        "func": "attackEnd",
+        "params": [
+          "3"
+        ]
+      }
+    ]
   },
   {
     "__type__": "cc.animation.ObjectTrack",

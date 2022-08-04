@@ -95,8 +95,9 @@ export class Player extends Component {
     }
 
     //攻击完成
-    attackEnd(){
-        console.log('攻击完成')
+    attackEnd(params){
+        playerFsm.init()
+        console.log('攻击完成', params)
         // this.anim.play('player-attack')
     }
     //攻击结束  
