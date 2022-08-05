@@ -8,7 +8,7 @@
     "speed": 1,
     "wrapMode": 1,
     "enableTrsBlending": false,
-    "_duration": 0.4166666666666667,
+    "_duration": 0.5,
     "_hash": 500763545,
     "_tracks": [
       {
@@ -18,12 +18,12 @@
     "_exoticAnimation": null,
     "_events": [
       {
-        "frame": 0.4166666666666667,
+        "frame": 0.5,
         "func": "",
         "params": []
       },
       {
-        "frame": 0.4166666666666667,
+        "frame": 0.5,
         "func": "attackEnd",
         "params": [
           "1"

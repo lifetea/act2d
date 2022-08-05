@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Animation, Vec3, input, Input, EventKeyboard, KeyCode, tween, v3, RigidBody2D, v2 } from 'cc';
+import { _decorator, Component, Node, Animation, Vec3, input, Input, EventKeyboard, KeyCode, tween, v3, RigidBody2D, v2, AudioSource, AudioClip } from 'cc';
 const { ccclass, property } = _decorator;
 import { playerFsm } from './playerFsm';
 
@@ -22,14 +22,25 @@ export class Player extends Component {
     accLeft:boolean = false
     accRight:boolean = false
 
-    anim:Animation = null
+    anim: Animation = null;
+
+    @property({type:AudioClip})
+    attackClip1: AudioClip = null;
+
+    @property({type:AudioClip})
+    attackClip2: AudioClip = null;
+
+    @property({type:AudioClip})
+    attackClip3: AudioClip = null;
+
+    audio: AudioSource = null;
 
     onLoad() {
         this.anim = this.node.getComponent(Animation)
+        this.audio = this.node.getComponent(AudioSource)
         playerFsm.player = this;
         // playerFsm.vaporize()
-        this.anim.resume()
-        playerFsm.onInit();
+        // this.anim.resume()
         // console.log(palyerFsm.state)
 
         input.on(Input.EventType.KEY_DOWN, this.onKeyDown, this);
@@ -53,7 +64,15 @@ export class Player extends Component {
                 this.jump()
                 break;
             case KeyCode.KEY_J:
-                playerFsm.attack()
+                console.log(playerFsm.state, 'HHHHH')
+                if(playerFsm.state == 'attack3'){
+                    console.log('攻击3')
+                }else{
+                    playerFsm.attack()
+                }
+                let state =  this.anim.getState('player-attack1')
+                console.log(state, '动画状态')
+
                 break;
         }
     }
@@ -61,21 +80,16 @@ export class Player extends Component {
         switch (event.keyCode) {
             case KeyCode.KEY_A:
                 this.accLeft = false
-                playerFsm.init()
+                playerFsm.idle()
                 break;
             case KeyCode.KEY_D:
                 this.accRight = false
-                playerFsm.init()
+                playerFsm.idle()
                 break;
             case KeyCode.KEY_J:
                 // palyerFsm.onStand()
                 break;
         }
-    }
-
-
-    init(){
-        this.anim.play('player-stand')
     }
 
     resetAnim(){
@@ -92,11 +106,13 @@ export class Player extends Component {
 
     start() {
         this.playerPos = this.node.position
+        this.anim.getState('player-stand')
+        playerFsm.idle();
     }
 
     //攻击完成
     attackEnd(params){
-        playerFsm.init()
+        playerFsm.idle()
         console.log('攻击完成', params)
         // this.anim.play('player-attack')
     }
