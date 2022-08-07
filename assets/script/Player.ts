@@ -47,7 +47,6 @@ export class Player extends Component {
         this.anim = this.node.getComponent(Animation)
         this.audio = this.node.getComponent(AudioSource)
         this.box2 = this.node.getComponent(BoxCollider2D)
-        console.log(this.box2)  
         playerFsm.player = this;
         // playerFsm.vaporize()
         // this.anim.resume()

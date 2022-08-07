@@ -1,4 +1,4 @@
-import { _decorator, Component, Animation, Node, Collider2D, Contact2DType, IPhysics2DContact, AudioSource, AudioClip, RigidBody, RigidBody2D, math } from 'cc';
+import { _decorator, Component, Animation, Node, Collider2D, Contact2DType, IPhysics2DContact, AudioSource, AudioClip, RigidBody, RigidBody2D, math, Vec3 } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('Enemy')
@@ -11,10 +11,17 @@ export class Enemy extends Component {
     currentHp:number = 10
     
     //操作方向
-    accLeft:boolean = false
+    @property
+    accLeft:boolean = true
+
+    //移动范围
+    moveRange:number = 100
+
+    defaultPos:Vec3 = null
     
     accRight:boolean = false
 
+    enemyPos:Vec3 = null
 
     anim: Animation = null;
 
@@ -29,6 +36,8 @@ export class Enemy extends Component {
         this.anim = this.node.getComponent(Animation)
         this.audio = this.node.getComponent(AudioSource)
         this.rigid = this.node.getComponent(RigidBody2D)
+
+        this.defaultPos = this.node.position
         // Your initialization goes here.
         //注册单个碰撞回调  
         let collider = this.getComponent(Collider2D);
