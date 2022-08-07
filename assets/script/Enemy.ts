@@ -9,6 +9,12 @@ export class Enemy extends Component {
     maxHp:number = 10
 
     currentHp:number = 10
+    
+    //操作方向
+    accLeft:boolean = false
+    
+    accRight:boolean = false
+
 
     anim: Animation = null;
 
